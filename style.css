@@ -1,0 +1,33 @@
+/* Basic Styling - Customize this extensively */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #f0f0f0;
+    padding: 1rem;
+    text-align: center; /* Center the header content */
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Center the navigation items */
+}
+
+nav li {
+    display: inline;
+    margin: 0 1rem;
+}
+
+/* Responsive Design - Example */
+@media (max-width: 600px) {
+    nav li {
+        display: block; /* Stack navigation items vertically on smaller screens */
+        margin: 0.5rem 0;
+    }
+}
