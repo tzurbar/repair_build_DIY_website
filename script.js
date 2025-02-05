@@ -1,71 +1,45 @@
-// Example: Adding language options dynamically
-const languageSelector = document.getElementById('language-selector');
-const languages = ['English', 'Hebrew', 'Arabic', 'Spanish', 'Portuguese'];
+// Sample Guide Data (Replace with your actual data or fetch it)
+const guideData = {
+    title: "How to Replace a Lightbulb",
+    links: [
+        { url: "https://www.example.com/safety", description: "Safety Precautions" },
+        { url: "https://www.example.com/tools", description: "Tools Needed" }
+    ],
+    steps: [
+        { image: "step1.jpg", text: "Step 1: Turn off the power." },
+        { image: "step2.jpg", text: "Step 2: Remove the old bulb." },
+        // ... more steps
+    ]
+};
 
-languages.forEach(lang => {
-    const link = document.createElement('a');
-    link.href = '#'; // You'll need to implement language switching logic
-    link.textContent = lang;
-    languageSelector.appendChild(link);
-    languageSelector.appendChild(document.createTextNode(' | ')); // Add separators
-});
-
-// Example: Fetching and displaying guides (you'll need a backend API)
-fetch('/api/guides')  // Replace with your API endpoint
-    .then(response => response.json())
-    .then(guides => {
-        // Display guides in the "featured-guides" section
-        const featuredGuides = document.getElementById('featured-guides');
-        guides.forEach(guide => {
-            const guideElement = document.createElement('div');
-            guideElement.innerHTML = `<h3>${guide.title}</h3><p>${guide.shortDescription}</p>`;
-            featuredGuides.appendChild(guideElement);
-        });
-    });
-// Get the dropdown element
-const languageDropdown = document.getElementById('language-dropdown');
-
-// Add an event listener to the dropdown to handle language changes
-languageDropdown.addEventListener('change', function() {
-  const selectedLanguage = this.value;
-  // Call a function to handle the language change (you'll need to implement this)
-  switchLanguage(selectedLanguage);
-});
-
-function switchLanguage(lang) {
-    // Here, you would implement the logic to change the website's language
-    // This might involve fetching translations from a server or updating text content based on the selected language.
-
-    // Example: Displaying an alert (replace with your actual implementation)
-    alert("Language switched to: " + lang);
-
-    // Example: Setting a language cookie (for persistence across sessions)
-    document.cookie = `language=${lang}; path=/`; // Adjust path as needed
-
-    // Example: Reloading the page (simplest approach, but less user-friendly)
-    // location.reload();
-
-    // More advanced: Using a localization library (recommended for complex sites)
-    // ...
-}
-
-
-// Example: Setting initial language based on cookie or browser default
 document.addEventListener('DOMContentLoaded', () => {
-    const savedLanguage = getCookie('language'); // Function to get cookie value
-    const defaultLanguage = navigator.language.slice(0, 2); // Get first two letters of browser language code
+    const titleElement = document.querySelector('h1');
+    titleElement.textContent = guideData.title;
 
-    const initialLanguage = savedLanguage || defaultLanguage || 'en'; // Priority: saved, browser, default
+    const linkList = document.getElementById('link-list');
+    guideData.links.forEach(link => {
+        const listItem = document.createElement('li');
+        const linkElement = document.createElement('a');
+        linkElement.href = link.url;
+        linkElement.textContent = link.description;
+        listItem.appendChild(linkElement);
+        linkList.appendChild(listItem);
+    });
 
-    languageDropdown.value = initialLanguage; // Set dropdown value
-
-    switchLanguage(initialLanguage); // Apply initial language
-
+    const stepList = document.getElementById('step-list');
+    guideData.steps.forEach(step => {
+        const listItem = document.createElement('li');
+        const imageElement = document.createElement('img');
+        imageElement.src = step.image;
+        imageElement.alt = `Step ${stepList.children.length + 1}`; // Alt text for accessibility
+        imageElement.classList.add('step-image'); // Add class for styling
+        const textElement = document.createElement('div');
+        textElement.classList.add('step-text'); // Add class for styling
+        textElement.textContent = step.text;
+        listItem.appendChild(imageElement);
+        listItem.appendChild(textElement);
+        stepList.appendChild(listItem);
+    });
 });
 
-function getCookie(name) {
-    const value = `; ${document.cookie}`;
-    const parts = value.split(`; ${name}=`);
-    if (parts.length === 2) return parts.pop().split(';').shift();
-}
-// ... (More JavaScript for form handling, user interactions, etc.)
+// ... (More JavaScript for dynamic steps, translation, etc.)
