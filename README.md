@@ -28,37 +28,34 @@ This project aims to create a user-friendly, expandable platform for sharing and
 
 ## Technology Stack
 
-*   **Frontend:** HTML, CSS, JavaScript (potentially a framework like React, Vue, or Angular, and a CSS framework like Bootstrap or Tailwind CSS).
-*   **Backend:**  A server-side language (e.g., Node.js, Python, Ruby, PHP) and framework (e.g., Express, Flask, Django, Rails, Laravel).
-*   **Database:**  A relational or NoSQL database (e.g., PostgreSQL, MySQL, MongoDB).
-*   **Hosting:**  A web hosting provider that supports the chosen backend technology.
+*   **Frontend:** HTML, CSS, JavaScript.
+*   **Backend:**  A server-side language - TBD.
+*   **Database:**  A relational or NoSQL database - TBD.
+*   **Hosting:**  A web hosting provider that supports the chosen backend technology - TBD.
 
 ## Getting Started
 
-1.  **Clone the Repository:** `git clone https://github.com/YOUR_USERNAME/non-obsolescence.git` (Replace with your repository URL)
-2.  **Install Dependencies:**  (Instructions for installing frontend and backend dependencies will go here)
-3.  **Set up Database:** (Instructions for setting up the database)
-4.  **Configure Environment:** (Instructions for configuring environment variables)
-5.  **Run the Development Server:** (Instructions for running the local development server)
+1.  **Clone the Repository:** `git clone https://github.com/tzurbar/non-obsolescence.git` (Replace with your repository URL)
+2.  **Run the "index.html" file on your browser:** make sure all the files in the same folder (index.html, CSS, JS..)
 
 ## Contributing
 
-Contributions are welcome!  Please see the [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how to contribute to this project.
+Contributions are welcome!
 
 ## Roadmap
 
-*   **Phase 1:** Project Definition & Planning
-*   **Phase 2:** Design & Prototyping
+*   **Phase 1:** Project Definition & Planning - done
+*   **Phase 2:** Design & Prototyping - in proccess
 *   **Phase 3:** Development
 *   **Phase 4:** Testing & Deployment
 *   **Phase 5:** Launch & Maintenance, Community Building, Feature Enhancements
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+No license is required :)
 
 ## Contact
 
-*   **Project Maintainer:** YOUR_NAME
-*   **Email:** YOUR_EMAIL@example.com
-*   **GitHub:** YOUR_GITHUB_USERNAME
+*   **Project Maintainer:** tzur bar-cochva
+*   **Email:** tzurbar@gmail.com
+*   **GitHub:** tzurbar
