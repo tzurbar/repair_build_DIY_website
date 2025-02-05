@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit a Guide</title>
+</head>
+<body>
+    <h1>Submit a Guide</h1>
+    <form id="guide-form">
+        <label for="category">Category:</label>
+        <select id="category" name="category">
+          <option value="electronics">Electronics</option>
+          <option value="furniture">Furniture</option>
+          </select>
+        <input type="text" id="new-category" name="new-category" placeholder="Add New Category">
+        <br><br>
+
+        <label for="title">Title:</label>
+        <input type="text" id="title" name="title" required><br><br>
+
+        <div id="steps-container">
+            <div class="step">
+                <label for="image1">Step 1 Image:</label>
+                <input type="file" id="image1" name="image1"><br><br>
+                <label for="text1">Step 1 Text:</label><br>
+                <textarea id="text1" name="text1"></textarea><br><br>
+            </div>
+            </div>
+
+        <button type="button" id="add-step">Add Step</button>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const addStepButton = document.getElementById('add-step');
+        const stepsContainer = document.getElementById('steps-container');
+        let stepCount = 1;
+
+        addStepButton.addEventListener('click', () => {
+            stepCount++;
+            const newStepDiv = document.createElement('div');
+            newStepDiv.classList.add('step');
+            newStepDiv.innerHTML = `
+                <label for="image${stepCount}">Step ${stepCount} Image:</label>
+                <input type="file" id="image${stepCount}" name="image${stepCount}"><br><br>
+                <label for="text${stepCount}">Step ${stepCount} Text:</label><br>
+                <textarea id="text${stepCount}" name="text${stepCount}"></textarea><br><br>
+            `;
+            stepsContainer.appendChild(newStepDiv);
+        });
+    </script>
+</body>
+</html>
